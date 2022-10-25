@@ -4,8 +4,9 @@ book_path = "books/frankenstein.txt"
 def main():
     text = get_book_text(book_path)
     print(text)
+    #print(count_letters(text))
+    print(f"----- Begin Report of {book_path} -----")
     print(f"There are a total of {get_word_count(text)} words in the document!")
-    print(count_letters(text))
     report_char_count(count_letters(text))
 
 def get_book_text(book_path):
