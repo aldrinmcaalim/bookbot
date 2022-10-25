@@ -5,6 +5,7 @@ def main():
     text = get_book_text(book_path)
     print(text)
     print(f"There are a total of {get_word_count(text)} words in the document!")
+    print(count_letters(text))
 
 def get_book_text(book_path):
     with open(book_path) as bp:
@@ -15,6 +16,14 @@ def get_word_count(text):
     total_word_count = len(text.split())
     return total_word_count
 
+def count_letters(text):
+    count_chars = {}
+    lower_cased = text.lower()
+    split_into_array = lower_cased.split()
+    for word in split_into_array:
+        for char in word:
+            count_chars[char] = 1 + count_chars.get(char, 0)
+    return count_chars
 
 main()
 
