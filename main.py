@@ -6,6 +6,7 @@ def main():
     print(text)
     print(f"There are a total of {get_word_count(text)} words in the document!")
     print(count_letters(text))
+    report_char_count(count_letters(text))
 
 def get_book_text(book_path):
     with open(book_path) as bp:
@@ -25,6 +26,11 @@ def count_letters(text):
             count_chars[char] = 1 + count_chars.get(char, 0)
     return count_chars
 
+def report_char_count(char_dictionary):
+    for letter, count in char_dictionary.items():
+        if letter.isalpha():
+            print(f"The '{letter}' character was found {count} times")
+        
 main()
 
 
